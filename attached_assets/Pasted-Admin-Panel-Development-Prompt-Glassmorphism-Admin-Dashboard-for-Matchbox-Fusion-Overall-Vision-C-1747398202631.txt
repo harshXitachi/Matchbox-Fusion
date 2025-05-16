@@ -1,0 +1,108 @@
+Admin Panel Development Prompt: Glassmorphism Admin Dashboard for Matchbox~Fusion
+Overall Vision
+Create a sophisticated, feature-rich admin panel with the same dark glassmorphism aesthetic as the main website. This admin dashboard should allow complete content management while maintaining visual consistency with the client-facing site.
+
+Design Direction
+Base Theme: Dark mode with deep navy/purple background featuring subtle cosmic/nebula elements
+UI Style: Glassmorphism admin components - semi-transparent frosted glass panels, subtle borders, and blur effects
+Color Palette:
+Primary: Deep purples and blues for backgrounds
+Accent: Glowing purples and mint green for active states and success indicators
+Alert: Subtle red glow for warnings/errors
+Text: White and light gray for maximum readability
+Login Portal
+Implement secure login with the provided credentials:
+Username: swati001
+Password: tandon@opkl
+Create a visually stunning login screen with:
+Floating 3D glass login form
+Animated background effect
+Company logo with subtle animation
+Appropriate error handling for invalid credentials
+"Remember me" functionality and password recovery option
+Dashboard Overview
+At-a-glance statistics in glass card widgets:
+Website traffic metrics
+Recent booking inquiries
+Upcoming events calendar
+Most viewed services
+Interactive charts and graphs with glass effect and subtle animations
+Real-time notification system with glass notification cards
+Content Management Features
+Website Content Editor
+Comprehensive WYSIWYG editor for all website sections:
+Hero section text and image management
+Service descriptions and pricing
+Testimonial management
+Company story and about us information
+Live preview functionality showing changes before publishing
+Version history with the ability to revert changes
+Media Library
+Drag-and-drop media uploader with progress animation
+Comprehensive image management with categories and tags
+Image editing capabilities (crop, resize, filters)
+Video embedding options for testimonials or service showcases
+Storage usage statistics with visual indicators
+Blog Management System
+Complete blog post creation and editing interface:
+Rich text editor with formatting options
+Featured image selection
+Category and tag management
+SEO meta descriptions and titles
+Scheduled publishing
+Comment moderation system with approval workflow
+Blog analytics showing views, engagement, and sharing metrics
+Service & Pricing Management
+Interface to add, edit, or remove service tiers
+Pricing adjustment tools with historical tracking
+Service feature management
+Special offer and discount creation tools
+Availability calendar for managing bookable slots
+Customer Relationship Management
+Inquiry and booking management system
+Client database with contact information and event history
+Email template creator for client communications
+Automated follow-up scheduling
+Client feedback collection and analysis
+Team Member Management
+Staff profiles with roles and permissions
+Team member bio and photo management for website display
+Internal task assignment and tracking
+Performance metrics for team productivity
+Advanced Features
+SEO Tools
+Meta tag management across all pages
+Keyword performance tracking
+Google Search Console integration
+Sitemap generation and management
+Analytics Dashboard
+Comprehensive website analytics:
+Traffic sources
+User behavior
+Conversion tracking
+Heat maps of user engagement
+Exportable reports with visual graphs
+System Settings
+Website backup and restore functionality
+Security settings and access logs
+Integration management for third-party tools
+Performance optimization controls
+API key management
+Technical Requirements
+Responsive admin layout that works on tablets and desktops
+Real-time validation for all form inputs
+Optimized for speed even with the glassmorphism effects
+Comprehensive security features including:
+Two-factor authentication option
+Session timeout controls
+Audit logging of all admin actions
+IP-based access restrictions
+Role-based permission system for different admin users
+User Experience Considerations
+Intuitive navigation with clearly labeled sections
+Consistent placement of action buttons (save, cancel, delete)
+Confirmation dialogs for destructive actions
+Success/error notifications with glassmorphism styling
+Keyboard shortcuts for power users
+Comprehensive help documentation accessible throughout the interface
+The admin panel should strike a perfect balance between stunning visual design and practical functionality, empowering the Matchbox~Fusion team to efficiently manage all aspects of their website content while maintaining the premium glassmorphism aesthetic established in the client-facing site.

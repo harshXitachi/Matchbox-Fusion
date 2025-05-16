@@ -40,40 +40,28 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-display font-semibold text-lg mb-4">Newsletter</h4>
+            <h4 className="font-display font-semibold text-lg mb-4">Follow Us</h4>
             <p className="text-gray-300 mb-4">
-              Subscribe to our newsletter for event planning tips and inspiration.
+              Follow us on social media for event inspiration and updates on our latest projects.
             </p>
-            <form className="flex">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="bg-white/10 border border-white/20 rounded-l-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent-purple))] focus:border-transparent transition-all flex-grow"
-              />
-              <button 
-                type="submit" 
-                className="bg-[hsl(var(--accent-purple))] hover:bg-[hsl(var(--accent-purple))]/80 text-white px-4 py-2 rounded-r-lg transition-colors"
-                aria-label="Subscribe"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-            </form>
             
-            <div className="flex mt-6 space-x-3">
-              <a href="#" className="text-gray-400 hover:text-[hsl(var(--accent-purple))] transition-colors" aria-label="Facebook">
-                <FaFacebookF className="h-5 w-5" />
+            <div className="flex mt-6 space-x-5">
+              <a href="https://x.com/swatitandon101?s=21" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[hsl(var(--accent-blue))] transition-colors flex items-center" aria-label="Twitter">
+                <FaTwitter className="h-6 w-6 mr-2" />
+                <span>@swatitandon101</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-[hsl(var(--accent-blue))] transition-colors" aria-label="Twitter">
-                <FaTwitter className="h-5 w-5" />
+              <a href="#" className="text-gray-400 hover:text-[hsl(var(--accent-purple))] transition-colors flex items-center" aria-label="Instagram">
+                <FaInstagram className="h-6 w-6 mr-2" />
+                <span>@matchboxfusion</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-[hsl(var(--accent-purple))] transition-colors" aria-label="Instagram">
-                <FaInstagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-[hsl(var(--accent-teal))] transition-colors" aria-label="LinkedIn">
-                <FaLinkedinIn className="h-5 w-5" />
-              </a>
+            </div>
+            
+            <div className="mt-8 p-4 glass rounded-lg">
+              <h5 className="font-medium mb-2 text-lg">Event Planning Tips</h5>
+              <p className="text-gray-300 text-sm">
+                "The key to a successful event is attention to detail and creating moments that surprise and delight your guests."
+              </p>
+              <p className="text-right text-sm text-gray-400 mt-2">- Swati Choudhary</p>
             </div>
           </div>
         </div>
