@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import Chairman from "@/components/Chairman";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
@@ -30,6 +31,7 @@ const Home = () => {
         <ServicesSection />
         <PortfolioSection />
         <TestimonialsSection />
+        <Chairman />
         <ContactSection />
       </main>
       <Footer />

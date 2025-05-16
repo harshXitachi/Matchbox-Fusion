@@ -38,26 +38,47 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
+      // Construct WhatsApp message with form details
+      const whatsappMessage = `Hello, I'm ${formData.name}. 
+Email: ${formData.email}
+Event Type: ${formData.eventType}
+Message: ${formData.message}`;
+      
+      // Phone number without special characters
+      const phoneNumber = "918130893001";
+      
+      // Create the WhatsApp URL
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      
+      // Save form data to backend
       await apiRequest("POST", "/api/contact", formData);
       
       toast({
         title: "Message Sent",
-        description: "Thank you for your message! We will get back to you soon.",
+        description: "Redirecting you to WhatsApp to complete your inquiry.",
       });
       
-      setFormData({
-        name: "",
-        email: "",
-        eventType: "",
-        message: ""
-      });
+      // Short delay before opening WhatsApp
+      setTimeout(() => {
+        window.open(whatsappUrl, "_blank");
+        
+        // Clear form
+        setFormData({
+          name: "",
+          email: "",
+          eventType: "",
+          message: ""
+        });
+        
+        setIsSubmitting(false);
+      }, 1500);
+      
     } catch (error) {
       toast({
         title: "Error",
         description: "There was an error sending your message. Please try again.",
         variant: "destructive"
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -202,7 +223,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">Phone</h4>
-                    <a href="tel:+1234567890" className="text-gray-300 hover:text-[hsl(var(--accent-blue))] transition-colors">+1 (234) 567-890</a>
+                    <a href="tel:+918130893001" className="text-gray-300 hover:text-[hsl(var(--accent-blue))] transition-colors">+91 81308 93001</a>
                   </div>
                 </div>
                 
@@ -212,7 +233,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">Location</h4>
-                    <p className="text-gray-300">123 Event Avenue, Suite 500<br/>New York, NY 10001</p>
+                    <p className="text-gray-300">Gurugram<br/>Haryana, India</p>
                   </div>
                 </div>
               </div>
