@@ -229,6 +229,12 @@ const AdminDashboard = ({ onLogout }: AdminDashboardProps) => {
               { id: "dashboard", label: "Dashboard", icon: "📊" },
               { id: "content", label: "Content Editor", icon: "📝" },
               { id: "media", label: "Media Library", icon: "🖼️" },
+              { id: "blog", label: "Blog Management", icon: "📰" },
+              { id: "services", label: "Services & Pricing", icon: "💼" },
+              { id: "customers", label: "Customer CRM", icon: "👥" },
+              { id: "team", label: "Team Members", icon: "👥" },
+              { id: "seo", label: "SEO Tools", icon: "🔍" },
+              { id: "analytics", label: "Analytics", icon: "📈" },
               { id: "settings", label: "Settings", icon: "⚙️" },
             ].map((item) => (
               <li key={item.id}>
@@ -303,6 +309,105 @@ const AdminDashboard = ({ onLogout }: AdminDashboardProps) => {
           </div>
         </div>
       </main>
+    </div>
+  );
+};
+
+// The separate DashboardContent component was removed 
+// as we now use the imported Dashboard component : 'text-gray-400'}`}>
+                {stat.change}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Recent inquiries */}
+      <div className="glass rounded-xl p-6">
+        <h3 className="text-xl font-display font-semibold mb-4">Recent Inquiries</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-white/10">
+                <th className="text-left px-4 py-3 text-sm font-medium text-gray-400">Name</th>
+                <th className="text-left px-4 py-3 text-sm font-medium text-gray-400">Email</th>
+                <th className="text-left px-4 py-3 text-sm font-medium text-gray-400">Event Type</th>
+                <th className="text-left px-4 py-3 text-sm font-medium text-gray-400">Date</th>
+                <th className="text-left px-4 py-3 text-sm font-medium text-gray-400">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { name: "Sarah Johnson", email: "sarah@example.com", eventType: "Wedding", date: "May 16, 2025", status: "New" },
+                { name: "Michael Smith", email: "michael@example.com", eventType: "Corporate", date: "May 15, 2025", status: "Contacted" },
+                { name: "Emily Wilson", email: "emily@example.com", eventType: "Birthday", date: "May 14, 2025", status: "Meeting Scheduled" },
+                { name: "David Brown", email: "david@example.com", eventType: "Anniversary", date: "May 13, 2025", status: "Proposal Sent" },
+              ].map((inquiry, index) => (
+                <tr key={index} className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                  <td className="px-4 py-3">{inquiry.name}</td>
+                  <td className="px-4 py-3 text-gray-300">{inquiry.email}</td>
+                  <td className="px-4 py-3 text-gray-300">{inquiry.eventType}</td>
+                  <td className="px-4 py-3 text-gray-300">{inquiry.date}</td>
+                  <td className="px-4 py-3">
+                    <span className={`px-2 py-1 rounded-full text-xs ${
+                      inquiry.status === "New" ? "bg-blue-500/20 text-blue-300" :
+                      inquiry.status === "Contacted" ? "bg-yellow-500/20 text-yellow-300" :
+                      inquiry.status === "Meeting Scheduled" ? "bg-purple-500/20 text-purple-300" :
+                      "bg-green-500/20 text-green-300"
+                    }`}>
+                      {inquiry.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="text-center mt-4">
+          <button className="text-[hsl(var(--accent-purple))] hover:text-[hsl(var(--accent-blue))] transition-colors">
+            View All Inquiries
+          </button>
+        </div>
+      </div>
+      
+      {/* Quick actions */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="glass rounded-xl p-6">
+          <h3 className="text-xl font-display font-semibold mb-4">Quick Actions</h3>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { label: "Add New Event", icon: "✨" },
+              { label: "Update Pricing", icon: "💲" },
+              { label: "Edit Content", icon: "📝" },
+              { label: "Upload Media", icon: "🖼️" },
+            ].map((action, index) => (
+              <button key={index} className="glass-darker hover:bg-white/10 transition-colors p-4 rounded-lg flex flex-col items-center justify-center">
+                <span className="text-2xl mb-2">{action.icon}</span>
+                <span className="text-sm">{action.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        
+        <div className="glass rounded-xl p-6">
+          <h3 className="text-xl font-display font-semibold mb-4">System Notifications</h3>
+          <div className="space-y-4">
+            {[
+              { message: "New website version available", time: "2 hours ago", isImportant: true },
+              { message: "Backup completed successfully", time: "Yesterday", isImportant: false },
+              { message: "3 new comments need approval", time: "2 days ago", isImportant: true },
+            ].map((notification, index) => (
+              <div key={index} className="flex items-start p-3 rounded-lg hover:bg-white/5 transition-colors">
+                <div className={`w-2 h-2 rounded-full mt-2 mr-3 ${notification.isImportant ? 'bg-red-400' : 'bg-green-400'}`}></div>
+                <div>
+                  <p className="text-sm">{notification.message}</p>
+                  <p className="text-xs text-gray-400">{notification.time}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
