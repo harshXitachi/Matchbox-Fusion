@@ -1,4 +1,5 @@
-import { users, type User, type InsertUser, type Contact, type InsertContact } from "@shared/schema";
+import { users, contactSubmissions, type User, type InsertUser, type Contact, type InsertContact } from "@shared/schema";
+import { eq } from "drizzle-orm";
 
 // modify the interface with any CRUD methods
 // you might need
@@ -53,4 +54,58 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// Database storage implementation
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    try {
+      const { db } = await import("./db");
+      const [user] = await db.select().from(users).where(eq(users.id, id));
+      return user || undefined;
+    } catch (error) {
+      console.error("Database error in getUser:", error);
+      return undefined;
+    }
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    try {
+      const { db } = await import("./db");
+      const [user] = await db.select().from(users).where(eq(users.username, username));
+      return user || undefined;
+    } catch (error) {
+      console.error("Database error in getUserByUsername:", error);
+      return undefined;
+    }
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    try {
+      const { db } = await import("./db");
+      const [user] = await db
+        .insert(users)
+        .values(insertUser)
+        .returning();
+      return user;
+    } catch (error) {
+      console.error("Database error in createUser:", error);
+      throw error;
+    }
+  }
+
+  async createContactSubmission(insertContact: InsertContact): Promise<Contact> {
+    try {
+      const { db } = await import("./db");
+      const [contact] = await db
+        .insert(contactSubmissions)
+        .values(insertContact)
+        .returning();
+      return contact;
+    } catch (error) {
+      console.error("Database error in createContactSubmission:", error);
+      throw error;
+    }
+  }
+}
+
+// Use database storage since we have the database available
+export const storage = new DatabaseStorage();
