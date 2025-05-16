@@ -192,7 +192,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">Email</h4>
-                    <a href="mailto:contact@matchboxfusion.com" className="text-gray-300 hover:text-[hsl(var(--accent-purple))] transition-colors">contact@matchboxfusion.com</a>
+                    <a href="mailto:Matchboxfusion@gmail.com" className="text-gray-300 hover:text-[hsl(var(--accent-purple))] transition-colors">Matchboxfusion@gmail.com</a>
                   </div>
                 </div>
                 

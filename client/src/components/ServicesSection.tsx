@@ -213,8 +213,9 @@ const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
-                <button 
-                  className={`w-full ${
+                <a
+                  href="#contact"
+                  className={`w-full block text-center ${
                     selectedPlan === option.id 
                       ? "bg-gradient-to-r from-[hsl(var(--accent-purple))]/80 to-[hsl(var(--accent-blue))]/80 hover:from-[hsl(var(--accent-purple))] hover:to-[hsl(var(--accent-blue))]" 
                       : "bg-white/10 hover:bg-white/20"
@@ -222,7 +223,7 @@ const ServicesSection = () => {
                   onClick={() => handleSelectPlan(option.id)}
                 >
                   Select Plan
-                </button>
+                </a>
               </div>
             ))}
           </motion.div>
