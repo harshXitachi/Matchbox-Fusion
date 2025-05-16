@@ -1,5 +1,6 @@
 import { Pool, neonConfig } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-serverless';
+import { eq } from 'drizzle-orm';
 import ws from "ws";
 import * as schema from "@shared/admin-schema";
 
@@ -18,8 +19,8 @@ export const db = drizzle(pool, { schema });
 export async function initializeAdminUser() {
   try {
     // Check if admin user exists
-    const existingAdmin = await db.select().from(schema.adminUsers).where((users) => 
-      users.username.equals('swati001')
+    const existingAdmin = await db.select().from(schema.adminUsers).where(
+      eq(schema.adminUsers.username, 'swati001')
     );
     
     if (existingAdmin.length === 0) {

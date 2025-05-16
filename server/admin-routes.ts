@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { db, initializeAdminUser } from "./admin-db";
-import { adminUsers, websiteVisits, blogPosts, mediaItems, siteSettings } from "@shared/admin-schema";
+import * as schema from "@shared/admin-schema";
 import { eq, desc, count } from "drizzle-orm";
 import multer from "multer";
 import path from "path";
