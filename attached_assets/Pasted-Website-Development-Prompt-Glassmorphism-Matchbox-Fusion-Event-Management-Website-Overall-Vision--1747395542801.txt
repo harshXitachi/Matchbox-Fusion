@@ -1,0 +1,64 @@
+Website Development Prompt: Glassmorphism Matchbox~Fusion Event Management Website
+Overall Vision
+Create a premium event management website with a dark glassmorphism UI theme featuring 3D elements and animations. The website should have a sophisticated, modern aesthetic with floating glass-like panels, subtle purple/blue gradient backgrounds, and interactive animated elements.
+
+Design Direction
+Base Theme: Dark mode with deep navy/purple background featuring subtle cosmic/nebula elements similar to the Reflect website in the reference image
+UI Style: Implement glassmorphism design throughout - semi-transparent frosted glass panels with light borders, subtle shadows, and blur effects
+Color Palette:
+Primary: Deep purples, blues, and blacks for backgrounds
+Accent: Glowing purples, blues, and subtle whites for highlights
+Text: White and light gray for maximum readability against dark backgrounds
+3D Elements:
+Floating emoji-like 3D objects with subtle glow effects (similar to the smiling faces in the reference image)
+3D animated wave or portal effect in the hero section (similar to the purple light portal in the Reflect website)
+Floating 3D cards with glass effect that respond to mouse movement
+Key Sections & Features
+Navigation
+Transparent glass navbar with subtle blur effect
+Animated hover states on navigation items
+Glowing indicator for active page
+Hero Section
+Large, bold typography for "Matchbox~Fusion" with animated gradient effect
+Animated 3D portal/wave visual similar to the Reflect website reference
+Floating 3D objects that move slightly as user scrolls or moves mouse
+"Start free consultation" call-to-action button with glass effect and glow
+Services Section
+Glass cards showcasing different event services (Wedding Planning, Corporate Events, etc.)
+Three-tiered pricing display similar to the reference image with:
+Basic, Advanced, and Pro options
+Clear pricing display ($100, $249, $449)
+Selection indicators with glowing effect when selected
+"Quick book a lesson" button with glass effect
+"See the full list" text link
+Testimonials
+Floating glass testimonial cards that slightly rotate on hover
+Subtle particle effects around testimonial cards
+Client photos with glass frame effect
+Portfolio Gallery
+Interactive gallery with glass effect frames
+Hover animations that bring images forward with enhanced glow
+Animated transitions between gallery items
+Contact Section
+Glass-effect contact form with subtle glow on input fields
+Animated submit button with liquid-like effect when clicked
+Floating 3D contact elements (phone, email icons)
+Animation Requirements
+Micro-interactions: Subtle animations for all interactive elements (buttons, links, form fields)
+Scroll Animations: Elements should fade/slide in as user scrolls down the page
+Background Animation: Slow-moving gradient or particle effect in the background
+Text Animation: Key headings should have subtle animation effects (gradient shifts, glowing)
+Cursor Effects: Custom cursor with trail effect and interactive glow when hovering over clickable elements
+Technical Requirements
+Responsive design that maintains the glassmorphism effect across all devices
+Optimized loading for 3D elements to ensure smooth performance
+Progressive enhancement to ensure basic functionality on older browsers
+Accessibility considerations despite the dark theme and complex visual effects
+Smooth scrolling and page transitions
+Content Integration
+Maintain all the original content from the reference site (http://9079703080.renderforestsites.com/) but enhance the presentation with the new design direction:
+
+Keep all service descriptions, testimonials, and company information
+Maintain the "Our Story" and service sections but with upgraded visual presentation
+Preserve the call-to-action elements but redesign them with the glassmorphism effect
+This website should create an immersive, premium experience that showcases Matchbox~Fusion as an innovative, high-end event management service through its cutting-edge design while maintaining exceptional usability
