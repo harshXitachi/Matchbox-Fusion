@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 267 75% 59%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 213 90% 45%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+
+  /* Custom colors */
+  --deep-purple: 250 38% 12%;
+  --darker-purple: 240 38% 8%;
+  --accent-purple: 270 100% 62%;
+  --accent-blue: 220 92% 60%;
+  --accent-teal: 185 92% 41%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    background-color: hsl(var(--darker-purple));
+    background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    cursor: none;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background-color: rgba(169, 79, 255, 0.3);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/[0.18] shadow-lg;
+  }
+
+  .glass-darker {
+    @apply bg-[hsl(var(--darker-purple))]/70 backdrop-blur-md border border-white/[0.08] shadow-lg;
+  }
+
+  .glass-card {
+    @apply transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply -translate-y-2 shadow-accent-blue/15;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute -top-2 -left-2 -right-2 -bottom-2 bg-gradient-to-r from-accent-purple to-accent-blue rounded-lg z-[-1] opacity-0 transition-opacity duration-300 filter blur-md;
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-70;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-purple via-accent-blue to-accent-teal bg-clip-text text-transparent bg-[length:200%_200%] animate-gradient;
+  }
+
+  .custom-cursor {
+    @apply w-5 h-5 bg-accent-purple/50 rounded-full fixed -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9999] mix-blend-difference transition-[width,height,background-color] duration-300;
+  }
+
+  .cursor-trail {
+    @apply w-1.5 h-1.5 bg-accent-purple/30 rounded-full fixed -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9998];
+  }
+
+  .cursor-glow {
+    @apply w-8 h-8 bg-accent-purple/80;
+  }
+
+  .portfolio-item {
+    @apply transition-all duration-500 overflow-hidden;
+  }
+
+  .portfolio-item:hover img {
+    @apply scale-105;
+  }
+
+  .testimonial-card {
+    @apply transition-transform duration-300;
+  }
+
+  .testimonial-card:hover {
+    @apply scale-[1.03] rotate-1;
+  }
+
+  .pricing-option {
+    @apply transition-all duration-300;
+  }
+
+  .pricing-option.selected {
+    @apply -translate-y-2 scale-[1.03];
+  }
+}
+
+/* Custom animations are now defined in tailwind.config.ts */
+
+@layer utilities {
+  /* Utility classes now use the tailwind animations defined in the config */
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(169, 79, 255, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(169, 79, 255, 0.8);
+}
