@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -50,7 +50,7 @@ const Footer = () => {
                 <FaTwitter className="h-6 w-6 mr-2" />
                 <span>@swatitandon101</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-[hsl(var(--accent-purple))] transition-colors flex items-center" aria-label="Instagram">
+              <a href="https://www.instagram.com/matchboxfusion/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[hsl(var(--accent-purple))] transition-colors flex items-center" aria-label="Instagram">
                 <FaInstagram className="h-6 w-6 mr-2" />
                 <span>@matchboxfusion</span>
               </a>

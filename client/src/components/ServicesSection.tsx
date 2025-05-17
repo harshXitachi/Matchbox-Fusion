@@ -28,47 +28,37 @@ const services = [
   }
 ];
 
-const pricingOptions = [
+// Company partners data
+const partners = [
   {
-    id: "basic",
-    title: "Basic",
-    price: "$100",
-    period: "/event",
-    features: [
-      "Initial consultation",
-      "Basic event planning",
-      "Day-of coordination"
-    ],
-    recommended: false,
+    id: "skoda",
+    name: "Skoda",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/SKODA_AUTO_wordmark.svg/1280px-SKODA_AUTO_wordmark.svg.png",
+    accentColor: "accent-green"
+  },
+  {
+    id: "loreal",
+    name: "L'Oreal Paris",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/L%27Or%C3%A9al_logo.svg/1280px-L%27Or%C3%A9al_logo.svg.png",
     accentColor: "accent-purple"
   },
   {
-    id: "advanced",
-    title: "Advanced",
-    price: "$249",
-    period: "/event",
-    features: [
-      "Everything in Basic",
-      "Vendor management",
-      "Design consultation",
-      "Full timeline creation"
-    ],
-    recommended: true,
+    id: "pepsi",
+    name: "Pepsi",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Pepsi_logo_2014.svg/1280px-Pepsi_logo_2014.svg.png",
     accentColor: "accent-blue"
   },
   {
-    id: "pro",
-    title: "Premium",
-    price: "$449",
-    period: "/event",
-    features: [
-      "Everything in Advanced",
-      "Full-service planning",
-      "Custom event design",
-      "VIP experience"
-    ],
-    recommended: false,
+    id: "axis",
+    name: "Axis Bank",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Axis_Bank_logo.svg/1280px-Axis_Bank_logo.svg.png",
     accentColor: "accent-teal"
+  },
+  {
+    id: "zoom",
+    name: "Zoom",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Zoom_logo.svg/1280px-Zoom_logo.svg.png",
+    accentColor: "accent-blue"
   }
 ];
 
@@ -77,12 +67,6 @@ const ServicesSection = () => {
     triggerOnce: true,
     threshold: 0.1
   });
-
-  const [selectedPlan, setSelectedPlan] = useState<string>("advanced");
-
-  const handleSelectPlan = (planId: string) => {
-    setSelectedPlan(planId);
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -153,7 +137,7 @@ const ServicesSection = () => {
           ))}
         </motion.div>
         
-        {/* Pricing Section */}
+        {/* Partners Section */}
         <div className="mt-24">
           <div className="text-center mb-12">
             <motion.h2 
@@ -163,7 +147,7 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="gradient-text">Choose Your Experience Level</span>
+              <span className="gradient-text">Our Trusted Partners</span>
             </motion.h2>
             <motion.p 
               className="text-gray-300 max-w-2xl mx-auto"
@@ -172,75 +156,32 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Select the perfect package that suits your event needs and budget. All packages can be customized to your requirements.
+              We have worked with some of the world's most renowned brands to create unforgettable events.
             </motion.p>
           </div>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {pricingOptions.map((option) => (
-              <div 
-                key={option.id}
-                className={`glass pricing-option rounded-xl p-6 relative overflow-hidden ${selectedPlan === option.id ? 'selected' : ''}`}
-                id={`pricing-${option.id}`}
-                data-price={option.id}
+            {partners.map((partner) => (
+              <motion.div 
+                key={partner.id}
+                className="glass partner-logo rounded-xl p-4 flex items-center justify-center h-40 relative overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className={`absolute top-0 right-0 bg-gradient-to-bl from-[hsl(var(--${option.accentColor}))]/30 to-transparent w-36 h-36 rounded-bl-full`}></div>
-                {option.id === "advanced" && (
-                  <div className="absolute -top-16 -right-16 bg-gradient-to-bl from-[hsl(var(--accent-blue))]/40 to-transparent w-48 h-48 rounded-bl-full"></div>
-                )}
-                {option.id === "advanced" && (
-                  <div className="absolute top-0 left-0 bg-gradient-to-br from-[hsl(var(--accent-purple))]/30 to-transparent w-16 h-16 rounded-br-full"></div>
-                )}
-                <h3 className="text-xl font-display font-semibold mb-2">{option.title}</h3>
-                <div className="text-3xl font-display font-bold mb-4">
-                  <span className="text-white">{option.price}</span>
-                  <span className="text-sm text-gray-400 font-normal">{option.period}</span>
-                </div>
-                <div className="h-px bg-white/20 mb-4"></div>
-                <ul className="space-y-3 mb-8">
-                  {option.features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 text-[hsl(var(--${option.accentColor}))] mr-2 flex-shrink-0 mt-0.5`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#contact"
-                  className={`w-full block text-center ${
-                    selectedPlan === option.id 
-                      ? "bg-gradient-to-r from-[hsl(var(--accent-purple))]/80 to-[hsl(var(--accent-blue))]/80 hover:from-[hsl(var(--accent-purple))] hover:to-[hsl(var(--accent-blue))]" 
-                      : "bg-white/10 hover:bg-white/20"
-                  } transition-colors py-3 rounded-lg text-white font-medium`}
-                  onClick={() => handleSelectPlan(option.id)}
-                >
-                  Select Plan
-                </a>
-              </div>
+                <div className={`absolute top-0 right-0 bg-gradient-to-bl from-[hsl(var(--${partner.accentColor}))]/20 to-transparent w-24 h-24 rounded-bl-full`}></div>
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="max-w-[80%] max-h-[80%] object-contain filter brightness-0 invert" 
+                />
+              </motion.div>
             ))}
-          </motion.div>
-          
-          <motion.div 
-            className="text-center mt-10"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <a href="#contact" className="text-[hsl(var(--accent-purple))] hover:text-[hsl(var(--accent-blue))] transition-colors inline-flex items-center text-lg">
-              See the full list of services
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
           </motion.div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitter, FaInstagram } from "react-icons/fa";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
@@ -249,20 +249,12 @@ Message: ${formData.message}`;
               <h3 className="text-2xl font-display font-semibold mb-6">Follow Us</h3>
               
               <div className="flex space-x-4">
-                <a href="#" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[hsl(var(--accent-purple))]/20 transition-colors group">
-                  <FaFacebookF className="h-5 w-5 text-white group-hover:text-[hsl(var(--accent-purple))] transition-colors" />
-                </a>
-                
-                <a href="#" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[hsl(var(--accent-blue))]/20 transition-colors group">
+                <a href="https://x.com/swatitandon101?s=21" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[hsl(var(--accent-blue))]/20 transition-colors group">
                   <FaTwitter className="h-5 w-5 text-white group-hover:text-[hsl(var(--accent-blue))] transition-colors" />
                 </a>
                 
-                <a href="#" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[hsl(var(--accent-purple))]/20 transition-colors group">
+                <a href="https://www.instagram.com/matchboxfusion/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[hsl(var(--accent-purple))]/20 transition-colors group">
                   <FaInstagram className="h-5 w-5 text-white group-hover:text-[hsl(var(--accent-purple))] transition-colors" />
-                </a>
-                
-                <a href="#" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[hsl(var(--accent-teal))]/20 transition-colors group">
-                  <FaLinkedinIn className="h-5 w-5 text-white group-hover:text-[hsl(var(--accent-teal))] transition-colors" />
                 </a>
               </div>
             </motion.div>
